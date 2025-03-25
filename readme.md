@@ -55,19 +55,32 @@ The target variable is:
 
 ## File Structure
 Breast-Cancer-Detection/
+
 │
+
 ├── Codes/
+
 │   └──logistic_regression.ipynb                          # Code
+
 │   └──logistic_regression.py                             # Code
+
 ├── Dataset/
+
 │   └──breast_cancer.csv                                  # Dataset
+
 ├── [app.py](http://_vscodecontentref_/1)                 # Flask application
+
 ├── [model.pkl](http://_vscodecontentref_/2)              # Trained machine learning model
+
 ├── templates/
+
 │   └── index.html         # HTML template for the web interface
+
 └── [readme.md](http://_vscodecontentref_/3)              # Project documentation
 
+
 ## Screenshots
+![Screenshot 2025-03-25 154440](https://github.com/user-attachments/assets/9bbd0e5c-70cc-4db4-99af-d39766acb9e0)
 
 ## License
 This project is licensed under the MIT License. Feel free to use and modify it as needed.
