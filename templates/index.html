@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breast Cancer Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .malignant {
+            color: red;
+        }
+        .benign {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Breast Cancer Prediction</h1>
+        <form action="/predict" method="post">
+            <input type="text" name="feature1" placeholder="Clump Thickness" required>
+            <input type="text" name="feature2" placeholder="Uniformity of Cell Size" required>
+            <input type="text" name="feature3" placeholder="Uniformity of Cell Shape" required>
+            <input type="text" name="feature4" placeholder="Marginal Adhesion" required>
+            <input type="text" name="feature5" placeholder="Single Epithelial Cell Size" required>
+            <input type="text" name="feature6" placeholder="Bare Nuclei" required>
+            <input type="text" name="feature7" placeholder="Bland Chromatin" required>
+            <input type="text" name="feature8" placeholder="Normal Nucleoli" required>
+            <input type="text" name="feature9" placeholder="Mitoses" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction_text %}
+            <h3 class="result {% if 'Malignant' in prediction_text %}malignant{% elif 'Benign' in prediction_text %}benign{% endif %}">
+                {{ prediction_text }}
+            </h3>
+        {% endif %}
+    </div>
+</body>
+</html>
